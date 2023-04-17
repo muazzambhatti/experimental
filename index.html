@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="index-3.css">
+    <script src="index-3.js" defer></script>
+</head>
+
+<body>
+    <div id="scrolllink"></div>
+    <header>
+        <h1>Watch All Movies</h1>
+        <div id="searchbox">
+            <input type="text" placeholder="Search by name" id="searchText">
+            <input type="button" id="searchbutton">
+        </div>
+
+    </header>
+    <section id="contentbody">
+        <div id="DDmenuesUp">
+            <div class="DDmenuTop">
+                <h5>GENRE</h5>
+                <select class="topmenues" id="genres">
+                    <option value="All">All</option>
+                    <option value="Action">Action</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Family">Family</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Crime">Crime</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Music">Music</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Western">Western</option>
+                    <option value="History">History</option>
+                    <option value="War">War</option>
+                    <option value="Horror">Horror</option>
+                    <option value="TV Movie">TV Movie</option>
+                    <option value="Mystery">Mystery</option>
+                </select>
+            </div>
+            <div class="DDmenuTop">
+                <h5>YEAR</h5>
+                <select id="year-picker" class="topmenues">
+                    <option value="All">All</option>
+                </select>
+            </div>
+            <div class="DDmenuTop">
+                <h5>LANGUAGE</h5>
+                <select id="languages" class="topmenues">
+                    <option value="All">All</option>
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Cantonese">Cantonese</option>
+                    <option value="Mandarin">Mandarin</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Polish">Polish</option>
+                    <option value="Persian">Persian</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Danish">Danish</option>
+                    <option value="Norwegian">Norwegian</option>
+                    <option value="German">German</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Arabic">Arabic</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="Serbian">Serbian</option>
+                    <option value="Estonian">Estonian</option>
+                    <option value="Czech">Czech</option>
+                    <option value="Serbo-Croatian">Serbo-Croatian</option>
+                    <option value="Romanian">Romanian</option>
+                    <option value="Hungarian">Hungarian</option>
+                    <option value="Bosnian">Bosnian</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Bengali">Bengali</option>
+                </select>
+            </div>
+        </div>
+        <div id="DDmenuesDown">
+            <h5 style="margin:20px 5px 5px 5px;">RATING</h5>
+            <select id="bottomMenu">
+                <option value="All">All</option>
+                <option value="7.0">7.0</option>
+                <option value="7.1">7.1</option>
+                <option value="7.2">7.2</option>
+                <option value="7.3">7.3</option>
+                <option value="7.4">7.4</option>
+                <option value="7.5">7.5</option>
+                <option value="7.6">7.6</option>
+                <option value="7.7">7.7</option>
+                <option value="7.8">7.8</option>
+                <option value="7.9">7.9</option>
+                <option value="8.0">8.0</option>
+                <option value="8.1">8.1</option>
+                <option value="8.2">8.2</option>
+                <option value="8.3">8.3</option>
+                <option value="8.4">8.4</option>
+                <option value="8.5">8.5</option>
+                <option value="8.6">8.6</option>
+                <option value="8.7">8.7</option>
+            </select>
+        </div>
+        <br>
+        <hr>
+        <div id="contentDisplayHeadings">
+            <div class="rankColumn">
+                <h3>Rank</h3>
+            </div>
+            <div class="movieDetailsColumn">
+                <h3 style="padding-left: 10px;">Movie</h3>
+            </div>
+            <div class="yearColumn">
+                <h3 style="padding-left: 5px;">Year</h3>
+            </div>
+        </div>
+        <hr>
+        <section id="contentDisplay">
+            <div class="rankColumn">
+                <ul id="rankColumnList" style="list-style-type: none; margin: 0px; padding: 0px;"></ul>
+            </div>
+            <div class="movieDetailsColumn">
+                <ul id="movieDetailsColumnList" style="list-style-type: none; margin: 0px; padding: 0px;"></ul>
+            </div>
+            <div class="yearColumn">
+                <ul id="yearColumnList" style="list-style-type: none; margin: 0px; padding: 0px;"></ul>
+            </div>
+        </section>
+    </section>
+    <div id="backtop">
+        <a href="#scrolllink">
+            <img src="arrow.png">
+            <span>Go to top</span>
+        </a>
+    </div>
+</body>
+
+</html>
