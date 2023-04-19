@@ -74,14 +74,14 @@
                 return movieName.vote_average == requiredRating;
             })
         }
-        
+
         requiredYear = Year.value;
         if (requiredYear != "All") {
             results = results.filter(function (movieName) {
                 return movieName.release_date.includes(requiredYear);
             })
         }
-        
+
 
         requiredGenre = Genre.value;
         if (requiredGenre != "All") {
@@ -89,7 +89,7 @@
                 return movieName.genres.includes(requiredGenre);
             })
         }
-        
+
         if (results.length == 0) {
             let newParagraph = document.createElement("li");
             newParagraph.innerHTML = `<p class="detailBox">No movies match your query.</p>`;
@@ -108,33 +108,56 @@
 
     function createMovieCards(results) {
         for (let index = 0; index < results.length; index++) {
+            // let movieHeight = "0px";
             let movie = document.createElement("li");
             let rank = document.createElement("li");
             let year = document.createElement("li");
             let count = index + 1;
             let movieYear = results[index].release_date.slice(0, 4);
-            rank.innerHTML = `<div class="rankFromJs">${count}</div><br>`
-            movie.innerHTML = `<div class="movieFromJs">
-                <img src="https://image.tmdb.org/t/p/w45${results[index].poster_path}">
-                <div class="movietitlefromJS">
-                    <h4 style="margin: 0px 0px 10px 0px;"><a target="_blank" style="color: black" href="https://www.imdb.com/title/${results[index].external_ids.imdb_id}">${results[index].title}</a></h4>
-                    <div>
-                        <span class="certificationspanstyle">${results[index].certification}</span>
-                        <span style="display:inline-block;width:60%;border: 1px solid black;">${results[index].genres.toString(", ")}</span>
+
+            rank.innerHTML = `<div id="rank${index}" class="rankFromJs">${count}</div><br>`
+
+            movie.innerHTML = `
+            <div class="main" id="main${index}">  
+                <img style="margin-left: 5px" src="https://image.tmdb.org/t/p/w45${results[index].poster_path}">
+                <div id="movie">
+                    <div id="movie1">
+                        <a target="_blank" style="font-weight:bold;font-size:larger;color: black" href="https://www.imdb.com/title/${results[index].external_ids.imdb_id}">${results[index].title}</a>
                     </div>
-                    <div style="height: 100%;position:absolute; right: 2px; top:2px">
-                        <h5 class="ratingDuration">Movie Rating:</h5>
-                        <p class="ratingDurationAns">${results[index].vote_average}</p>
-                        <h5 class="ratingDuration">Watch Time:</h5>
-                        <p class="ratingDurationAns">${calculateRunTime(results[index].runtime)}</p>
+                    <div id="movie2">
+                        <span class="certificationspanstyle">${results[index].certification}</span>
+                        <span class="genreSpanStyle">${results[index].genres.join(", ") + "."}</span>
                     </div>
                 </div>
-            </div>
-            <br>`
-            year.innerHTML = `<div class="rankFromJs">${movieYear}</div><br>`
+                <div id="extraDetailBox">
+                    <h5 class="sideH5">Movie Rating:</h5>
+                    <p class="sideP">${results[index].vote_average}</p>
+                    <h5 class="sideH5">Watch Time:</h5>
+                    <p class="sideP">${calculateRunTime(results[index].runtime)}</p>
+                </div>
+            </div><br>`
+            year.innerHTML = `<div id="movieYear${index}" class="rankFromJs">${movieYear}</div><br>`
+
             rankColumnList.appendChild(rank);
             movieDetailsColumnList.appendChild(movie);
             yearColumnList.appendChild(year);
+            
+            let thisRank = "rank" + index;
+            let thisMovie = "main" + index;
+            let thisYear = "movieYear" + index;
+            
+            changeHeight(thisRank, thisMovie, thisYear);
         }
+    }
+
+    function changeHeight(rank, movie, year) {
+        let changeFromMovie = "";
+        let changeOfRank = "";
+        let changeOfYear = "";
+        changeFromMovie = getComputedStyle(document.getElementById(movie)).height;
+        changeOfRank = document.getElementById(rank);
+        changeOfYear = document.getElementById(year);
+        changeOfRank.style.height = changeFromMovie;
+        changeOfYear.style.height = changeFromMovie;
     }
 })();
