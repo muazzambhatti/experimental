@@ -118,7 +118,7 @@ header h1 {
 }
 
 .rankFromJs {
-    margin: 5px 0px;
+    margin: 10px 0px;
     background-color: #fff1cc;
     display: flex;
     justify-content: center;
@@ -168,7 +168,7 @@ li {
 .main {
     /* border: 1px solid black; */
     box-sizing: border-box;
-    margin: 5px 0px;
+    margin: 10px 0px;
     background-color: #fff1cc;
     width: 100%;
     display: flex;
@@ -261,7 +261,7 @@ li {
         font-size: 12px;
     }
     .sideP {
-        font-size: 9px;
+        font-size: 9.5px;
     }
     #backtop{
         background-color: #c5b4ff;

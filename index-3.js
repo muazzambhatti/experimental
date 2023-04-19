@@ -107,15 +107,17 @@
     }
 
     function createMovieCards(results) {
+        console.log(results[53].genres);
+
         for (let index = 0; index < results.length; index++) {
-            // let movieHeight = "0px";
+
             let movie = document.createElement("li");
             let rank = document.createElement("li");
             let year = document.createElement("li");
             let count = index + 1;
             let movieYear = results[index].release_date.slice(0, 4);
 
-            rank.innerHTML = `<div id="rank${index}" class="rankFromJs">${count}</div><br>`
+            rank.innerHTML = `<div id="rank${index}" class="rankFromJs">${count}</div>`
 
             movie.innerHTML = `
             <div class="main" id="main${index}">  
@@ -135,25 +137,30 @@
                     <h5 class="sideH5">Watch Time:</h5>
                     <p class="sideP">${calculateRunTime(results[index].runtime)}</p>
                 </div>
-            </div><br>`
-            year.innerHTML = `<div id="movieYear${index}" class="rankFromJs">${movieYear}</div><br>`
+            </div>`
+            year.innerHTML = `<div id="movieYear${index}" class="rankFromJs">${movieYear}</div>`
 
             rankColumnList.appendChild(rank);
             movieDetailsColumnList.appendChild(movie);
             yearColumnList.appendChild(year);
-            
+
             let thisRank = "rank" + index;
             let thisMovie = "main" + index;
             let thisYear = "movieYear" + index;
-            
-            changeHeight(thisRank, thisMovie, thisYear);
+
+            changeFromMovie = getComputedStyle(document.getElementById(thisMovie)).height;
+            changeOfRank = document.getElementById(thisRank);
+            changeOfYear = document.getElementById(thisYear);
+            changeOfRank.style.height = changeFromMovie;
+            changeOfYear.style.height = changeFromMovie;
+            // changeHeight(thisRank, thisMovie, thisYear);
         }
     }
 
     function changeHeight(rank, movie, year) {
-        let changeFromMovie = "";
-        let changeOfRank = "";
-        let changeOfYear = "";
+        // let changeFromMovie = "";
+        // let changeOfRank = "";
+        // let changeOfYear = "";
         changeFromMovie = getComputedStyle(document.getElementById(movie)).height;
         changeOfRank = document.getElementById(rank);
         changeOfYear = document.getElementById(year);
