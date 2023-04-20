@@ -107,7 +107,6 @@
     }
 
     function createMovieCards(results) {
-        console.log(results[53].genres);
 
         for (let index = 0; index < results.length; index++) {
 
