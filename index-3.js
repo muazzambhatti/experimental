@@ -105,7 +105,7 @@
         let timeString = timeInHours + " Hours " + timeInMinutes + " Mins";
         return timeString;
     }
-
+            
     function createMovieCards(results) {
 
         for (let index = 0; index < results.length; index++) {
@@ -152,14 +152,10 @@
             changeOfYear = document.getElementById(thisYear);
             changeOfRank.style.height = changeFromMovie;
             changeOfYear.style.height = changeFromMovie;
-            // changeHeight(thisRank, thisMovie, thisYear);
         }
     }
 
     function changeHeight(rank, movie, year) {
-        // let changeFromMovie = "";
-        // let changeOfRank = "";
-        // let changeOfYear = "";
         changeFromMovie = getComputedStyle(document.getElementById(movie)).height;
         changeOfRank = document.getElementById(rank);
         changeOfYear = document.getElementById(year);

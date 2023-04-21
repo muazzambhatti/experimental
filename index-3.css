@@ -158,11 +158,8 @@ header h1 {
     float: right;
     width: 60%;
 }
-li {
-    margin: 0px;
-    /* height: min-content; */
-    /* border: 1px solid black; */
-}
+
+  
 /* ---------------------------------------------------------------------------- */
 
 .main {
