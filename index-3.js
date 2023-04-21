@@ -105,20 +105,25 @@
         let timeString = timeInHours + " Hours " + timeInMinutes + " Mins";
         return timeString;
     }
-            
+
     function createMovieCards(results) {
 
         for (let index = 0; index < results.length; index++) {
 
-            let movie = document.createElement("li");
-            let rank = document.createElement("li");
-            let year = document.createElement("li");
-            let count = index + 1;
-            let movieYear = results[index].release_date.slice(0, 4);
+            setTimeout(() => {
+                let thisRank = "rank" + index;
+                let thisMovie = "main" + index;
+                let thisYear = "movieYear" + index;
 
-            rank.innerHTML = `<div id="rank${index}" class="rankFromJs">${count}</div>`
+                let movie = document.createElement("li");
+                let rank = document.createElement("li");
+                let year = document.createElement("li");
+                let count = index + 1;
+                let movieYear = results[index].release_date.slice(0, 4);
 
-            movie.innerHTML = `
+                rank.innerHTML = `<div id="rank${index}" class="rankFromJs">${count}</div>`
+
+                movie.innerHTML = `
             <div class="main" id="main${index}">  
                 <img style="margin-left: 5px" src="https://image.tmdb.org/t/p/w45${results[index].poster_path}">
                 <div id="movie">
@@ -137,21 +142,20 @@
                     <p class="sideP">${calculateRunTime(results[index].runtime)}</p>
                 </div>
             </div>`
-            year.innerHTML = `<div id="movieYear${index}" class="rankFromJs">${movieYear}</div>`
+                year.innerHTML = `<div id="movieYear${index}" class="rankFromJs">${movieYear}</div>`
 
-            rankColumnList.appendChild(rank);
-            movieDetailsColumnList.appendChild(movie);
-            yearColumnList.appendChild(year);
+                rankColumnList.appendChild(rank);
+                movieDetailsColumnList.appendChild(movie);
+                yearColumnList.appendChild(year);
 
-            let thisRank = "rank" + index;
-            let thisMovie = "main" + index;
-            let thisYear = "movieYear" + index;
+                changeFromMovie = getComputedStyle(document.getElementById(thisMovie)).height;
+                changeOfRank = document.getElementById(thisRank);
+                changeOfYear = document.getElementById(thisYear);
+                changeOfRank.style.height = changeFromMovie;
+                changeOfYear.style.height = changeFromMovie;
+            }, 10);
 
-            changeFromMovie = getComputedStyle(document.getElementById(thisMovie)).height;
-            changeOfRank = document.getElementById(thisRank);
-            changeOfYear = document.getElementById(thisYear);
-            changeOfRank.style.height = changeFromMovie;
-            changeOfYear.style.height = changeFromMovie;
+
         }
     }
 
