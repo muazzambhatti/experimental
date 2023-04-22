@@ -117,7 +117,8 @@
                 rank.innerHTML = `<div id="rank${index}" class="rankFromJs">${index + 1}</div>`
                 movie.innerHTML = `
             <div class="main" id="main${index}"> 
-                <div style="margin-left: 5px; width: 45px; height:68px;" > 
+                <div style="margin-left: 0px; width: 45px; height:68px;">
+                <img src="https://image.tmdb.org/t/p/w45${results[index].poster_path}"> 
                 </div>
                 <div id="movie">
                     <div id="movie1">
@@ -141,7 +142,7 @@
                 yearColumnList.appendChild(year);
                 document.getElementById("rank" + index).style.height = getComputedStyle(document.getElementById("main" + index)).height;
                 document.getElementById("movieYear" + index).style.height = getComputedStyle(document.getElementById("main" + index)).height;
-            }, 10);
+            }, 50);
         }
     }
 
