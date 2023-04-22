@@ -107,9 +107,10 @@
     }
 
     function createMovieCards(results) {
+        // <img src="https://image.tmdb.org/t/p/w45${results[index].poster_path}">
 
         for (let index = 0; index < results.length; index++) {
-            setTimeout(() => {
+            // setTimeout(() => {
                 let movie = document.createElement("li");
                 let rank = document.createElement("li");
                 let year = document.createElement("li");
@@ -117,7 +118,6 @@
                 movie.innerHTML = `
             <div class="main" id="main${index}"> 
                 <div style="margin-left: 5px; width: 45px; height:68px;" > 
-                <img src="https://image.tmdb.org/t/p/w45${results[index].poster_path}">
                 </div>
                 <div id="movie">
                     <div id="movie1">
@@ -141,7 +141,9 @@
                 yearColumnList.appendChild(year);
                 document.getElementById("rank" + index).style.height = getComputedStyle(document.getElementById("main" + index)).height;
                 document.getElementById("movieYear" + index).style.height = getComputedStyle(document.getElementById("main" + index)).height;
-            }, 10);
+            }//, 10);
         }
     }
-})();
+    
+// }
+)();
