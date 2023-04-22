@@ -110,7 +110,7 @@
         // <img src="https://image.tmdb.org/t/p/w45${results[index].poster_path}">
 
         for (let index = 0; index < results.length; index++) {
-            // setTimeout(() => {
+            setTimeout(() => {
                 let movie = document.createElement("li");
                 let rank = document.createElement("li");
                 let year = document.createElement("li");
@@ -141,9 +141,9 @@
                 yearColumnList.appendChild(year);
                 document.getElementById("rank" + index).style.height = getComputedStyle(document.getElementById("main" + index)).height;
                 document.getElementById("movieYear" + index).style.height = getComputedStyle(document.getElementById("main" + index)).height;
-            }//, 10);
+            }, 10);
         }
     }
-    
-// }
+
+}
 )();
