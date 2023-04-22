@@ -118,7 +118,7 @@
                 movie.innerHTML = `
             <div class="main" id="main${index}"> 
                 <div style="margin-left: 0px; width: 45px; height:68px;">
-                <img src="https://image.tmdb.org/t/p/w45${results[index].poster_path}"> 
+                <img style="margin:0px; padding:0px;" src="https://image.tmdb.org/t/p/w45${results[index].poster_path}"> 
                 </div>
                 <div id="movie">
                     <div id="movie1">
