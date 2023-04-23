@@ -142,7 +142,7 @@
                 yearColumnList.appendChild(year);
                 document.getElementById("rank" + index).style.height = getComputedStyle(document.getElementById("main" + index)).height;
                 document.getElementById("movieYear" + index).style.height = getComputedStyle(document.getElementById("main" + index)).height;
-            }, 50);
+            }, 5);
         }
     }
 
